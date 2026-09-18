@@ -1,74 +1,74 @@
-﻿2026-09-18T06:15:22.5200022Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-2026-09-18T06:15:22.5209723Z ##[group]Run actions/checkout@v4
-2026-09-18T06:15:22.5210690Z with:
-2026-09-18T06:15:22.5211295Z   repository: bkwshmr115-netizen/omar-app
-2026-09-18T06:15:22.5215707Z   token: ***
-2026-09-18T06:15:22.5216713Z   ssh-strict: true
-2026-09-18T06:15:22.5217276Z   ssh-user: git
-2026-09-18T06:15:22.5217857Z   persist-credentials: true
-2026-09-18T06:15:22.5218583Z   clean: true
-2026-09-18T06:15:22.5219188Z   sparse-checkout-cone-mode: true
-2026-09-18T06:15:22.5219878Z   fetch-depth: 1
-2026-09-18T06:15:22.5220446Z   fetch-tags: false
-2026-09-18T06:15:22.5221011Z   show-progress: true
-2026-09-18T06:15:22.5221646Z   lfs: false
-2026-09-18T06:15:22.5222223Z   submodules: false
-2026-09-18T06:15:22.5222967Z   set-safe-directory: true
-2026-09-18T06:15:22.5223592Z   allow-unsafe-pr-checkout: false
-2026-09-18T06:15:22.5224554Z ##[endgroup]
-2026-09-18T06:15:22.6256514Z Syncing repository: bkwshmr115-netizen/omar-app
-2026-09-18T06:15:22.6259471Z ##[group]Getting Git version info
-2026-09-18T06:15:22.6260656Z Working directory is '/home/runner/work/omar-app/omar-app'
-2026-09-18T06:15:22.6262357Z [command]/usr/bin/git version
-2026-09-18T06:15:22.6285330Z git version 2.55.0
-2026-09-18T06:15:22.6306154Z ##[endgroup]
-2026-09-18T06:15:22.6322317Z Temporarily overriding HOME='/home/runner/work/_temp/c515c196-38ca-4129-95d5-5a9094f91154' before making global git config changes
-2026-09-18T06:15:22.6325171Z Adding repository directory to the temporary git global config as a safe directory
-2026-09-18T06:15:22.6327878Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/omar-app/omar-app
-2026-09-18T06:15:22.6378015Z Deleting the contents of '/home/runner/work/omar-app/omar-app'
-2026-09-18T06:15:22.6389094Z ##[group]Initializing the repository
-2026-09-18T06:15:22.6398959Z [command]/usr/bin/git init /home/runner/work/omar-app/omar-app
-2026-09-18T06:15:22.6480126Z hint: Using 'master' as the name for the initial branch. This default branch name
-2026-09-18T06:15:22.6481859Z hint: will change to "main" in Git 3.0. To configure the initial branch name
-2026-09-18T06:15:22.6483452Z hint: to use in all of your new repositories, which will suppress this warning,
-2026-09-18T06:15:22.6485224Z hint: call:
-2026-09-18T06:15:22.6486029Z hint:
-2026-09-18T06:15:22.6574358Z hint: 	git config --global init.defaultBranch <name>
-2026-09-18T06:15:22.6575507Z hint:
-2026-09-18T06:15:22.6576759Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-2026-09-18T06:15:22.6578124Z hint: 'development'. The just-created branch can be renamed via this command:
-2026-09-18T06:15:22.6580817Z hint:
-2026-09-18T06:15:22.6581326Z hint: 	git branch -m <name>
-2026-09-18T06:15:22.6581846Z hint:
-2026-09-18T06:15:22.6582514Z hint: Disable this message with "git config set advice.defaultBranchName false"
-2026-09-18T06:15:22.6583573Z Initialized empty Git repository in /home/runner/work/omar-app/omar-app/.git/
-2026-09-18T06:15:22.6589832Z [command]/usr/bin/git remote add origin https://github.com/bkwshmr115-netizen/omar-app
-2026-09-18T06:15:22.6593263Z ##[endgroup]
-2026-09-18T06:15:22.6594372Z ##[group]Disabling automatic garbage collection
-2026-09-18T06:15:22.6595074Z [command]/usr/bin/git config --local gc.auto 0
-2026-09-18T06:15:22.6596744Z ##[endgroup]
-2026-09-18T06:15:22.6597459Z ##[group]Setting up auth
-2026-09-18T06:15:22.6598172Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-09-18T06:15:22.6629821Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-09-18T06:15:22.7007267Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-09-18T06:15:22.7055047Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-09-18T06:15:22.7315212Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-09-18T06:15:22.7353956Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-09-18T06:15:22.7599489Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-2026-09-18T06:15:22.7641301Z ##[endgroup]
-2026-09-18T06:15:22.7642581Z ##[group]Fetching the repository
-2026-09-18T06:15:22.7652610Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a062ed02a373500f752122cc1add701f0ae7d80b:refs/remotes/origin/main
-2026-09-18T06:15:23.0877852Z From https://github.com/bkwshmr115-netizen/omar-app
-2026-09-18T06:15:23.0879025Z  * [new ref]         a062ed02a373500f752122cc1add701f0ae7d80b -> origin/main
-2026-09-18T06:15:23.0882844Z ##[endgroup]
-2026-09-18T06:15:23.0883711Z ##[group]Determining the checkout info
-2026-09-18T06:15:23.0884767Z ##[endgroup]
-2026-09-18T06:15:23.0891579Z [command]/usr/bin/git sparse-checkout disable
-2026-09-18T06:15:23.0944325Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-2026-09-18T06:15:23.0979254Z ##[group]Checking out the ref
-2026-09-18T06:15:23.0984267Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
-2026-09-18T06:15:23.1053274Z Switched to a new branch 'main'
-2026-09-18T06:15:23.1058569Z branch 'main' set up to track 'origin/main'.
-2026-09-18T06:15:23.1063944Z ##[endgroup]
-2026-09-18T06:15:23.1106675Z [command]/usr/bin/git log -1 --format=%H
-2026-09-18T06:15:23.1135021Z a062ed02a373500f752122cc1add701f0ae7d80b
+﻿2026-09-18T06:39:02.2190490Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T06:39:02.2199534Z ##[group]Run actions/checkout@v4
+2026-09-18T06:39:02.2200411Z with:
+2026-09-18T06:39:02.2201056Z   repository: bkwshmr115-netizen/omar-app
+2026-09-18T06:39:02.2205334Z   token: ***
+2026-09-18T06:39:02.2205903Z   ssh-strict: true
+2026-09-18T06:39:02.2206484Z   ssh-user: git
+2026-09-18T06:39:02.2207017Z   persist-credentials: true
+2026-09-18T06:39:02.2207662Z   clean: true
+2026-09-18T06:39:02.2208396Z   sparse-checkout-cone-mode: true
+2026-09-18T06:39:02.2208992Z   fetch-depth: 1
+2026-09-18T06:39:02.2209619Z   fetch-tags: false
+2026-09-18T06:39:02.2210161Z   show-progress: true
+2026-09-18T06:39:02.2210773Z   lfs: false
+2026-09-18T06:39:02.2211278Z   submodules: false
+2026-09-18T06:39:02.2211990Z   set-safe-directory: true
+2026-09-18T06:39:02.2212589Z   allow-unsafe-pr-checkout: false
+2026-09-18T06:39:02.2213497Z ##[endgroup]
+2026-09-18T06:39:02.3243042Z Syncing repository: bkwshmr115-netizen/omar-app
+2026-09-18T06:39:02.3246148Z ##[group]Getting Git version info
+2026-09-18T06:39:02.3247478Z Working directory is '/home/runner/work/omar-app/omar-app'
+2026-09-18T06:39:02.3249218Z [command]/usr/bin/git version
+2026-09-18T06:39:02.3314773Z git version 2.55.0
+2026-09-18T06:39:02.3349415Z ##[endgroup]
+2026-09-18T06:39:02.3355970Z Temporarily overriding HOME='/home/runner/work/_temp/c3b4aa2c-4d73-47d4-8576-419c87a86f83' before making global git config changes
+2026-09-18T06:39:02.3358275Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-18T06:39:02.3360632Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/omar-app/omar-app
+2026-09-18T06:39:02.3410758Z Deleting the contents of '/home/runner/work/omar-app/omar-app'
+2026-09-18T06:39:02.3422770Z ##[group]Initializing the repository
+2026-09-18T06:39:02.3429266Z [command]/usr/bin/git init /home/runner/work/omar-app/omar-app
+2026-09-18T06:39:02.3535845Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-18T06:39:02.3538217Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-18T06:39:02.3540027Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-18T06:39:02.3541420Z hint: call:
+2026-09-18T06:39:02.3542152Z hint:
+2026-09-18T06:39:02.3543196Z hint: 	git config --global init.defaultBranch <name>
+2026-09-18T06:39:02.3544366Z hint:
+2026-09-18T06:39:02.3545579Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-18T06:39:02.3547254Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-18T06:39:02.3548801Z hint:
+2026-09-18T06:39:02.3549733Z hint: 	git branch -m <name>
+2026-09-18T06:39:02.3550704Z hint:
+2026-09-18T06:39:02.3552056Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-18T06:39:02.3553952Z Initialized empty Git repository in /home/runner/work/omar-app/omar-app/.git/
+2026-09-18T06:39:02.3562720Z [command]/usr/bin/git remote add origin https://github.com/bkwshmr115-netizen/omar-app
+2026-09-18T06:39:02.3687682Z ##[endgroup]
+2026-09-18T06:39:02.3689936Z ##[group]Disabling automatic garbage collection
+2026-09-18T06:39:02.3691220Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-18T06:39:02.3693822Z ##[endgroup]
+2026-09-18T06:39:02.3695057Z ##[group]Setting up auth
+2026-09-18T06:39:02.3696375Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-18T06:39:02.3707577Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-18T06:39:02.4050232Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-18T06:39:02.4091217Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-18T06:39:02.4333550Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-18T06:39:02.4369695Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-18T06:39:02.4599857Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-18T06:39:02.4639637Z ##[endgroup]
+2026-09-18T06:39:02.4640573Z ##[group]Fetching the repository
+2026-09-18T06:39:02.4649182Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b1c8314fb3f231c8611d2f7656eae6412bb4ceb:refs/remotes/origin/main
+2026-09-18T06:39:02.7192725Z From https://github.com/bkwshmr115-netizen/omar-app
+2026-09-18T06:39:02.7194942Z  * [new ref]         5b1c8314fb3f231c8611d2f7656eae6412bb4ceb -> origin/main
+2026-09-18T06:39:02.7199745Z ##[endgroup]
+2026-09-18T06:39:02.7201476Z ##[group]Determining the checkout info
+2026-09-18T06:39:02.7202818Z ##[endgroup]
+2026-09-18T06:39:02.7206491Z [command]/usr/bin/git sparse-checkout disable
+2026-09-18T06:39:02.7256972Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-18T06:39:02.7289343Z ##[group]Checking out the ref
+2026-09-18T06:39:02.7299913Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-09-18T06:39:02.7381664Z Switched to a new branch 'main'
+2026-09-18T06:39:02.7387458Z branch 'main' set up to track 'origin/main'.
+2026-09-18T06:39:02.7393479Z ##[endgroup]
+2026-09-18T06:39:02.7433506Z [command]/usr/bin/git log -1 --format=%H
+2026-09-18T06:39:02.7459835Z 5b1c8314fb3f231c8611d2f7656eae6412bb4ceb

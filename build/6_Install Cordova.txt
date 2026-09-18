@@ -1,15 +1,15 @@
-﻿2026-09-18T06:15:38.4592509Z ##[group]Run npm install -g cordova
-2026-09-18T06:15:38.4592903Z [36;1mnpm install -g cordova[0m
-2026-09-18T06:15:38.4638892Z shell: /usr/bin/bash -e {0}
-2026-09-18T06:15:38.4639168Z env:
-2026-09-18T06:15:38.4639495Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
-2026-09-18T06:15:38.4640007Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
-2026-09-18T06:15:38.4640420Z   ANDROID_HOME: /usr/local/lib/android/sdk
-2026-09-18T06:15:38.4640723Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-2026-09-18T06:15:38.4641002Z ##[endgroup]
-2026-09-18T06:15:43.1039206Z npm warn deprecated stringify-package@1.0.1: This module is not used anymore, and has been replaced by @npmcli/package-json
-2026-09-18T06:15:43.6599957Z 
-2026-09-18T06:15:43.6600654Z added 218 packages in 5s
-2026-09-18T06:15:43.6600987Z 
-2026-09-18T06:15:43.6601314Z 29 packages are looking for funding
-2026-09-18T06:15:43.6601712Z   run `npm fund` for details
+﻿2026-09-18T06:39:16.8521341Z ##[group]Run npm install -g cordova
+2026-09-18T06:39:16.8521742Z [36;1mnpm install -g cordova[0m
+2026-09-18T06:39:16.8570064Z shell: /usr/bin/bash -e {0}
+2026-09-18T06:39:16.8570337Z env:
+2026-09-18T06:39:16.8570647Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:39:16.8571155Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:39:16.8571568Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-09-18T06:39:16.8571865Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-09-18T06:39:16.8572143Z ##[endgroup]
+2026-09-18T06:39:22.7676705Z npm warn deprecated stringify-package@1.0.1: This module is not used anymore, and has been replaced by @npmcli/package-json
+2026-09-18T06:39:23.5267070Z 
+2026-09-18T06:39:23.5267938Z added 218 packages in 7s
+2026-09-18T06:39:23.5273539Z 
+2026-09-18T06:39:23.5273968Z 29 packages are looking for funding
+2026-09-18T06:39:23.5274556Z   run `npm fund` for details

@@ -1,0 +1,56 @@
+name: Build OmniLock APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Set up Java JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+      with:
+        packages: 'platform-tools platforms;android-34 build-tools;34.0.0'
+
+    - name: Install Cordova
+      run: npm install -g cordova
+
+    - name: Install project dependencies
+      run: npm install || true
+
+    - name: Add Android platform
+      run: |
+        cordova platform remove android || true
+        cordova platform add android
+
+    - name: Build Debug APK
+      run: cordova build android --debug
+
+    - name: List APK files (for debugging)
+      run: find platforms -name "*.apk" || true
+
+    - name: Upload Finished APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: Official-App-APK
+        path: |
+          platforms/android/app/build/outputs/apk/debug/*.apk
+          platforms/android/build/outputs/apk/debug/*.apk
+        if-no-files-found: warn

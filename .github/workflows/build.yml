@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '24'
 
     - name: Set up Java JDK
       uses: actions/setup-java@v4
@@ -54,3 +54,4 @@ jobs:
           platforms/android/app/build/outputs/apk/debug/*.apk
           platforms/android/build/outputs/apk/debug/*.apk
         if-no-files-found: warn
+

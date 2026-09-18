@@ -11,5 +11,22 @@
     "ecosystem:cordova"
   ],
   "author": "Apache Cordova Team",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkwshmr115-netizen/omar-app.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bkwshmr115-netizen/omar-app/issues"
+  },
+  "homepage": "https://github.com/bkwshmr115-netizen/omar-app#readme",
+  "dependencies": {
+    "cordova-android": "15.1.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
 }

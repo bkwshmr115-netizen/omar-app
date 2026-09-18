@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>OMAR NEURAL SHIELD — Future Core</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Creepster&display=swap');
+
+:root {
+  --bg: #020008;
+  --panel: #0a0514;
+  --border: #2a1040;
+  --blood: #ff003c;
+  --blood-glow: rgba(255, 0, 60, 0.55);
+  --matrix: #00ff9d;
+  --cyan: #00f0ff;
+  --text: #f0e6ff;
+  --muted: #6b5078;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 50% 20%, rgba(255,0,60,0.18) 0%, transparent 55%),
+    linear-gradient(rgba(20,8,35,0.5) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 5px;
+}
+
+/* ===== LOCK SCREEN ===== */
+#lockScreen {
+  position: fixed; inset: 0; background: var(--bg); z-index: 99999;
+  display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 20px;
+}
+.lock-box {
+  width: 100%; max-width: 360px; background: var(--panel);
+  border: 2px solid var(--border); border-radius: 22px;
+  padding: 42px 26px; text-align: center;
+  box-shadow: 0 0 50px var(--blood-glow), inset 0 0 25px rgba(255,0,60,0.08);
+}
+.creator-title {
+  font-family: 'Creepster', cursive; font-size: 3.6rem; color: var(--blood);
+  letter-spacing: 5px; text-shadow: 0 0 25px var(--blood), 0 0 50px #ff0000;
+  margin-bottom: 6px; animation: pulse 1.6s infinite alternate;
+}
+@keyframes pulse {
+  0% { transform: scale(1); text-shadow: 0 0 20px var(--blood); }
+  100% { transform: scale(1.06); text-shadow: 0 0 40px var(--blood), 0 0 60px #ff4d6d; }
+}
+.lock-logo {
+  font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 900;
+  color: #fff; letter-spacing: 4px; margin-bottom: 18px;
+  border-bottom: 1px solid var(--border); padding-bottom: 12px;
+}
+.lock-sub {
+  font-size: 0.9rem; color: var(--cyan); margin-bottom: 26px;
+  text-shadow: 0 0 12px rgba(0,240,255,0.45);
+}
+.input-pin {
+  width: 100%; padding: 17px; margin-bottom: 18px; background: #000;
+  border: 1px solid var(--border); border-radius: 14px; color: var(--blood);
+  font-family: 'Orbitron', sans-serif; font-size: 1.55rem; text-align: center;
+  outline: none; letter-spacing: 9px; box-shadow: inset 0 0 12px rgba(255,0,60,0.25);
+  transition: 0.3s;
+}
+.input-pin:focus {
+  border-color: var(--blood);
+  box-shadow: 0 0 18px var(--blood-glow), inset 0 0 12px rgba(255,0,60,0.3);
+}
+.lock-btn {
+  width: 100%; padding: 17px; border: none; border-radius: 14px;
+  background: linear-gradient(135deg, var(--blood), #80001c); color: #fff;
+  font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 0.95rem;
+  letter-spacing: 2px; box-shadow: 0 0 22px var(--blood-glow); transition: 0.25s;
+}
+.lock-btn:active { transform: scale(0.97); filter: brightness(1.15); }
+.lock-err {
+  color: var(--blood); font-size: 0.88rem; margin-top: 16px;
+  min-height: 22px; font-weight: bold; letter-spacing: 1px;
+}
+
+/* ===== MAIN APP ===== */
+#mainApp { display: none; flex-direction: column; min-height: 100vh; }
+header {
+  padding: 26px 20px; text-align: center; border-bottom: 1px solid var(--border);
+  background: #07020f;
+}
+.logo {
+  font-family: 'Orbitron', sans-serif; font-size: 1.65rem; font-weight: 900;
+  color: #fff; letter-spacing: 3px;
+}
+.logo span { color: var(--blood); text-shadow: 0 0 16px var(--blood); }
+
+.main {
+  flex: 1; padding: 22px 16px 30px; max-width: 440px; width: 100%;
+  margin: 0 auto; display: flex; flex-direction: column; gap: 15px;
+}
+
+.status-core {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 18px;
+  padding: 32px 20px; text-align: center; transition: 0.4s;
+}
+.status-core.armed {
+  border-color: var(--matrix);
+  box-shadow: 0 0 45px rgba(0,255,157,0.18);
+}
+.shield-icon { font-size: 3.6rem; margin-bottom: 14px; transition: 0.3s; }
+.status-title {
+  font-family: 'Orbitron', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 6px;
+}
+.status-sub { font-size: 0.88rem; color: var(--muted); }
+
+.live-stats {
+  display: flex; justify-content: center; gap: 36px; margin-top: 22px;
+}
+.stat-value {
+  font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--cyan);
+}
+.stat-label { color: var(--muted); font-size: 0.75rem; margin-top: 3px; }
+
+.toggle-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 15px;
+  padding: 17px 18px; display: flex; justify-content: space-between; align-items: center;
+}
+.toggle-info h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.toggle-info p { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+
+.switch { position: relative; width: 52px; height: 28px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; inset: 0; background: #13091f; border-radius: 30px;
+  border: 1px solid var(--border); transition: 0.3s; cursor: pointer;
+}
+.slider::before {
+  content: ''; position: absolute; height: 20px; width: 20px; left: 3px; bottom: 3px;
+  background: #4a355c; border-radius: 50%; transition: 0.3s;
+}
+input:checked + .slider { background: var(--blood); border-color: var(--blood); }
+input:checked + .slider::before { transform: translateX(24px); background: #fff; }
+
+.btn-area { padding: 12px 0 8px; }
+.master-btn {
+  width: 100%; padding: 18px; border: none; border-radius: 14px;
+  font-family: 'Orbitron', sans-serif; font-size: 0.98rem; font-weight: 900;
+  letter-spacing: 2px; cursor: pointer;
+  background: linear-gradient(135deg, var(--blood), #990024); color: #fff;
+  box-shadow: 0 0 28px var(--blood-glow); transition: 0.3s;
+}
+.master-btn.armed {
+  background: #000; border: 1px solid var(--matrix); color: var(--matrix);
+  box-shadow: 0 0 22px rgba(0,255,157,0.25);
+}
+
+#cam-box { position: fixed; top: -9999px; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.toast {
+  position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%) translateY(25px);
+  background: #0a0212; border: 1px solid var(--blood); color: #fff;
+  padding: 13px 26px; border-radius: 10px; font-size: 0.88rem;
+  opacity: 0; transition: 0.35s; z-index: 999; box-shadow: 0 0 18px var(--blood-glow);
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.note {
+  text-align: center; font-size: 0.72rem; color: var(--muted);
+  margin-top: 10px; line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<!-- شاشة القفل -->
+<div id="lockScreen">
+  <div class="lock-box">
+    <div class="creator-title">OMAR</div>
+    <div class="lock-logo">NEURAL SECURITY OVERRIDE</div>
+    <div class="lock-sub">تحذير: النظام محمي بالكامل • أثبت هويتك</div>
+    <input class="input-pin" type="password" id="lockPin" maxlength="8" inputmode="numeric" placeholder="••••" autocomplete="off">
+    <button class="lock-btn" id="lockBtn">فك تشفير الحماية</button>
+    <div class="lock-err" id="lockErr"></div>
+  </div>
+</div>
+
+<!-- الواجهة الرئيسية -->
+<div id="mainApp">
+  <header>
+    <div class="logo">OMAR <span>NEURAL SHIELD</span></div>
+  </header>
+
+  <div class="main">
+    <div class="status-core" id="statusCore">
+      <div class="shield-icon" id="shieldIcon">💀</div>
+      <div class="status-title" id="statusTitle">الدرع في وضع الاستعداد</div>
+      <div class="status-sub" id="statusSub">اضغط لتفعيل المراقبة العصبية الكلية</div>
+
+      <div class="live-stats">
+        <div>
+          <div class="stat-value" id="captureCount">0</div>
+          <div class="stat-label">متسللين</div>
+        </div>
+        <div>
+          <div class="stat-value" id="lastSave">—</div>
+          <div class="stat-label">آخر رصد</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle-card">
+      <div class="toggle-info">
+        <h3>الرصد الصامت والتقاط الصور</h3>
+        <p>تصوير فوري لوجه المتسلل دون علمه</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="snapCheck" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-card">
+      <div class="toggle-info">
+        <h3>وضع التخفي الكامل</h3>
+        <p>إخفاء أي أثر أو إشعار أثناء التصوير</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="stealthCheck" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="btn-area">
+      <button class="master-btn" id="masterBtn">تفعيل الدرع الحديدي</button>
+    </div>
+
+    <div class="note">
+      الرمز السري: <b>2468</b><br>
+      كود الذعر: <b>9999</b>
+    </div>
+  </div>
+</div>
+
+<div id="cam-box">
+  <video id="video" autoplay playsinline muted></video>
+  <canvas id="canvas"></canvas>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PIN = "2468";
+const PANIC = "9999";
+
+let isUnlocked = false;
+let isArmed = false;
+let stream = null;
+let captureCount = 0;
+let captureTimer = null;
+let lastCapture = 0;
+
+const $ = id => document.getElementById(id);
+
+function showToast(msg) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2600);
+}
+
+function forceLock() {
+  isUnlocked = false;
+  $("lockScreen").style.display = "flex";
+  $("mainApp").style.display = "none";
+  $("lockPin").value = "";
+  $("lockErr").textContent = "";
+  setTimeout(() => $("lockPin").focus(), 180);
+}
+
+function doUnlock() {
+  isUnlocked = true;
+  $("lockScreen").style.display = "none";
+  $("mainApp").style.display = "flex";
+}
+
+$("lockBtn").onclick = () => {
+  const val = $("lockPin").value.trim();
+
+  if (val === PANIC) {
+    $("lockErr").textContent = "🚨 وضع الذعر مفعل...";
+    startCamera().then(ok => {
+      if (ok) {
+        setTimeout(() => takeShot("panic"), 350);
+        setTimeout(() => takeShot("panic"), 1300);
+        setTimeout(() => takeShot("panic"), 2400);
+      }
+    });
+    return;
+  }
+
+  if (val === PIN) {
+    doUnlock();
+  } else {
+    $("lockErr").textContent = "رمز غير صحيح";
+    if ($("snapCheck").checked) {
+      startCamera().then(ok => {
+        if (ok) setTimeout(() => takeShot("failed"), 450);
+      });
+    }
+  }
+};
+
+async function startCamera() {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "user", width: { ideal: 1280 }, height: { ideal: 720 } },
+      audio: false
+    });
+    $("video").srcObject = stream;
+    await $("video").play();
+    return true;
+  } catch (e) {
+    showToast("⚠️ مطلوب صلاحية الكاميرا");
+    return false;
+  }
+}
+
+function stopCamera() {
+  if (stream) {
+    stream.getTracks().forEach(t => t.stop());
+    stream = null;
+  }
+  if (captureTimer) {
+    clearInterval(captureTimer);
+    captureTimer = null;
+  }
+}
+
+async function takeShot(type = "intrusion") {
+  if (!stream || !$("snapCheck").checked) return;
+
+  const now = Date.now();
+  if (now - lastCapture < 2600) return;
+  lastCapture = now;
+
+  try {
+    const video = $("video");
+    const canvas = $("canvas");
+    canvas.width = video.videoWidth || 640;
+    canvas.height = video.videoHeight || 480;
+    canvas.getContext("2d").drawImage(video, 0, 0);
+
+    captureCount++;
+    $("captureCount").textContent = captureCount;
+    $("lastSave").textContent = new Date().toLocaleTimeString("ar-EG", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+    if (!$("stealthCheck").checked) {
+      showToast("🔒 تم التقاط صورة");
+    }
+  } catch (e) {}
+}
+
+$("masterBtn").onclick = async () => {
+  if (!isArmed) {
+    if (!(await startCamera())) return;
+
+    isArmed = true;
+    $("statusCore").classList.add("armed");
+    $("shieldIcon").textContent = "🛡️";
+    $("statusTitle").textContent = "الحماية نشطة الآن";
+    $("statusTitle").style.color = "var(--matrix)";
+    $("statusSub").textContent = "النظام يراقب ويحرس بصمت";
+    $("masterBtn").textContent = "إيقاف الحماية";
+    $("masterBtn").classList.add("armed");
+
+    setTimeout(() => takeShot(), 600);
+    captureTimer = setInterval(() => {
+      if (isArmed) takeShot();
+    }, 5200);
+
+    showToast("🛡️ تم تفعيل الدرع العصبي");
+  } else {
+    isArmed = false;
+    stopCamera();
+    $("statusCore").classList.remove("armed");
+    $("shieldIcon").textContent = "💀";
+    $("statusTitle").textContent = "الدرع في وضع الاستعداد";
+    $("statusTitle").style.color = "";
+    $("statusSub").textContent = "اضغط لتفعيل المراقبة العصبية الكلية";
+    $("masterBtn").textContent = "تفعيل الدرع الحديدي";
+    $("masterBtn").classList.remove("armed");
+    showToast("تم إيقاف الحماية");
+  }
+};
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    if (!isUnlocked) forceLock();
+    if (isArmed) setTimeout(() => takeShot(), 350);
+  }
+});
+
+forceLock();
+</script>
+</body>
+</html>

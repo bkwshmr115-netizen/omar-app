@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.omar.shield" version="1.0.0" xmlns="http://w3.org" xmlns:cdv="http://apache.org">
+    <name>OmarLock</name>
+    <description>
+        Advanced OmniLock Neural Core Anti-Theft Security System for Omar.
+    </description>
+    <author email="dev@cordova.apache.org" href="https://apache.org">
+        Omar Lock Security Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <platform name="android">
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <!-- 1. صلاحية الكاميرا والظهور فوق التطبيقات -->
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+            
+            <!-- 2. صلاحية الميكروفون والموقع الجغرافي الدقيق -->
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            
+            <!-- 3. صلاحيات نادرة: التشغيل التلقائي فور فتح الهاتف ومنع النوم -->
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+        </config-file>
+    </platform>
+</widget>
+

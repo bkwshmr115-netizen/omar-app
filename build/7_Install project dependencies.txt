@@ -1,0 +1,16 @@
+﻿2026-09-18T06:15:43.6842196Z ##[group]Run npm install || true
+2026-09-18T06:15:43.6842515Z [36;1mnpm install || true[0m
+2026-09-18T06:15:43.6883232Z shell: /usr/bin/bash -e {0}
+2026-09-18T06:15:43.6883485Z env:
+2026-09-18T06:15:43.6883800Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:15:43.6884297Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:15:43.6884712Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-09-18T06:15:43.6885018Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-09-18T06:15:43.6885303Z ##[endgroup]
+2026-09-18T06:15:44.5828365Z 
+2026-09-18T06:15:44.5829325Z added 64 packages, and audited 65 packages in 829ms
+2026-09-18T06:15:44.5829790Z 
+2026-09-18T06:15:44.5830124Z 8 packages are looking for funding
+2026-09-18T06:15:44.5830657Z   run `npm fund` for details
+2026-09-18T06:15:44.5838972Z 
+2026-09-18T06:15:44.5839284Z found 0 vulnerabilities

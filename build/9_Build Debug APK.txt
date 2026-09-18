@@ -1,0 +1,97 @@
+﻿2026-09-18T06:15:47.3055386Z ##[group]Run cordova build android --debug
+2026-09-18T06:15:47.3055957Z [36;1mcordova build android --debug[0m
+2026-09-18T06:15:47.3109045Z shell: /usr/bin/bash -e {0}
+2026-09-18T06:15:47.3109473Z env:
+2026-09-18T06:15:47.3109967Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:15:47.3110782Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:15:47.3111447Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-09-18T06:15:47.3111933Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-09-18T06:15:47.3112397Z ##[endgroup]
+2026-09-18T06:15:47.7440603Z Checking Java JDK and Android SDK versions
+2026-09-18T06:15:47.7447055Z ANDROID_HOME=/usr/local/lib/android/sdk (recommended setting)
+2026-09-18T06:15:47.7448209Z ANDROID_SDK_ROOT=/usr/local/lib/android/sdk (DEPRECATED)
+2026-09-18T06:15:48.1391018Z Using Android SDK: /usr/local/lib/android/sdk
+2026-09-18T06:15:50.9021575Z 
+2026-09-18T06:15:50.9023654Z Welcome to Gradle 9.7.1!
+2026-09-18T06:15:50.9024119Z 
+2026-09-18T06:15:50.9034635Z Here are the highlights of this release:
+2026-09-18T06:15:50.9035583Z  - Isolated Projects graduates to incubating
+2026-09-18T06:15:50.9036789Z  - Broader Configuration Cache compatibility
+2026-09-18T06:15:50.9037646Z  - Resilient Sync helps you fix broken builds
+2026-09-18T06:15:50.9038431Z  - More source locations in problem reports
+2026-09-18T06:15:50.9038926Z 
+2026-09-18T06:15:50.9039658Z For more details see https://docs.gradle.org/9.7.1/release-notes.html
+2026-09-18T06:15:50.9040288Z 
+2026-09-18T06:15:51.3013168Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-09-18T06:16:00.0797745Z > Task :wrapper
+2026-09-18T06:16:00.0798062Z 
+2026-09-18T06:16:00.0799831Z BUILD SUCCESSFUL in 11s
+2026-09-18T06:16:00.0800639Z 1 actionable task: 1 executed
+2026-09-18T06:16:00.0803661Z Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+2026-09-18T06:16:00.4186881Z Subproject Path: CordovaLib
+2026-09-18T06:16:00.4187563Z Subproject Path: app
+2026-09-18T06:16:00.5125491Z Fetching distribution.
+2026-09-18T06:16:00.5127126Z Downloading https://services.gradle.org/distributions/gradle-8.14.2-bin.zip
+2026-09-18T06:16:01.9926822Z .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%..............100%
+2026-09-18T06:16:03.2395911Z 
+2026-09-18T06:16:03.2408118Z Welcome to Gradle 8.14.2!
+2026-09-18T06:16:03.2408807Z 
+2026-09-18T06:16:03.2409352Z Here are the highlights of this release:
+2026-09-18T06:16:03.2410067Z  - Java 24 support
+2026-09-18T06:16:03.2410790Z  - GraalVM Native Image toolchain selection
+2026-09-18T06:16:03.2411559Z  - Enhancements to test reporting
+2026-09-18T06:16:03.2412543Z  - Build Authoring improvements
+2026-09-18T06:16:03.2412982Z 
+2026-09-18T06:16:03.2413711Z For more details see https://docs.gradle.org/8.14.2/release-notes.html
+2026-09-18T06:16:03.2414483Z 
+2026-09-18T06:16:03.3388199Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-09-18T06:16:35.7417046Z > Task :app:preBuild UP-TO-DATE
+2026-09-18T06:16:35.7418224Z > Task :app:preDebugBuild UP-TO-DATE
+2026-09-18T06:16:35.8380278Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+2026-09-18T06:16:35.8381217Z > Task :app:generateDebugBuildConfig
+2026-09-18T06:16:35.9384394Z > Task :CordovaLib:preBuild UP-TO-DATE
+2026-09-18T06:16:35.9385245Z > Task :CordovaLib:preDebugBuild UP-TO-DATE
+2026-09-18T06:16:35.9385859Z > Task :app:javaPreCompileDebug
+2026-09-18T06:16:35.9386558Z > Task :app:generateDebugResValues
+2026-09-18T06:16:35.9387173Z > Task :CordovaLib:generateDebugResValues
+2026-09-18T06:16:35.9387783Z > Task :CordovaLib:writeDebugAarMetadata
+2026-09-18T06:16:35.9388392Z > Task :CordovaLib:generateDebugResources
+2026-09-18T06:16:39.8381523Z > Task :app:checkDebugAarMetadata
+2026-09-18T06:16:39.9400827Z > Task :CordovaLib:packageDebugResources
+2026-09-18T06:16:39.9401565Z > Task :app:mapDebugSourceSetPaths
+2026-09-18T06:16:39.9403243Z > Task :app:generateDebugResources
+2026-09-18T06:16:40.6370830Z > Task :app:packageDebugResources
+2026-09-18T06:16:41.2376509Z > Task :app:createDebugCompatibleScreenManifests
+2026-09-18T06:16:41.2429938Z > Task :app:extractDeepLinksDebug
+2026-09-18T06:16:41.2457845Z > Task :CordovaLib:extractDeepLinksDebug
+2026-09-18T06:16:41.3384258Z > Task :app:mergeDebugResources FAILED
+2026-09-18T06:16:41.3385486Z > Task :app:parseDebugLocalResources
+2026-09-18T06:16:41.3393804Z > Task :CordovaLib:processDebugManifest
+2026-09-18T06:16:41.5416531Z > Task :CordovaLib:compileDebugLibraryResources
+2026-09-18T06:16:41.6377491Z 
+2026-09-18T06:16:41.6377659Z 
+2026-09-18T06:16:41.6388409Z [Incubating] Problems report is available at: file:///home/runner/work/omar-app/omar-app/platforms/android/build/reports/problems/problems-report.html
+2026-09-18T06:16:41.6421638Z FAILURE: Build failed with an exception.
+2026-09-18T06:16:41.6422039Z 
+2026-09-18T06:16:41.6446649Z 
+2026-09-18T06:16:41.6447567Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2026-09-18T06:16:41.6476902Z * What went wrong:
+2026-09-18T06:16:41.6477165Z 
+2026-09-18T06:16:41.6507213Z Execution failed for task ':app:mergeDebugResources'.
+2026-09-18T06:16:41.6508845Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2026-09-18T06:16:41.6509654Z 
+2026-09-18T06:16:41.6511061Z For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2026-09-18T06:16:41.6512338Z 18 actionable tasks: 18 executed
+2026-09-18T06:16:41.6537795Z > A failure occurred while executing com.android.build.gradle.internal.res.ResourceCompilerRunnable
+2026-09-18T06:16:41.6540313Z    > Resource compilation failed (Failed to compile resource file: /home/runner/work/omar-app/omar-app/platforms/android/app/src/main/res/xml/config.xml: . Cause: javax.xml.stream.XMLStreamException: ParseError at [row,col]:[14,69]
+2026-09-18T06:16:41.6542982Z      Message: http://www.w3.org/TR/1999/REC-xml-names-19990114#AttributePrefixUnbound?uses-permission&android:name&android). Check logs for more details.
+2026-09-18T06:16:41.6543949Z 
+2026-09-18T06:16:41.6544096Z * Try:
+2026-09-18T06:16:41.6544702Z > Run with --stacktrace option to get the stack trace.
+2026-09-18T06:16:41.6545524Z > Run with --info or --debug option to get more log output.
+2026-09-18T06:16:41.6546259Z > Run with --scan to get full insights.
+2026-09-18T06:16:41.6547179Z > Get more help at https://help.gradle.org.
+2026-09-18T06:16:41.6547523Z 
+2026-09-18T06:16:41.6547747Z BUILD FAILED in 41s
+2026-09-18T06:16:42.0443345Z Command failed with exit code 1: /home/runner/work/omar-app/omar-app/platforms/android/tools/gradlew cdvBuildDebug
+2026-09-18T06:16:42.0504695Z ##[error]Process completed with exit code 1.

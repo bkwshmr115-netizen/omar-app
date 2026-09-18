@@ -1,0 +1,23 @@
+﻿2026-09-18T06:15:44.5954974Z ##[group]Run cordova platform remove android || true
+2026-09-18T06:15:44.5955407Z [36;1mcordova platform remove android || true[0m
+2026-09-18T06:15:44.5955742Z [36;1mcordova platform add android[0m
+2026-09-18T06:15:44.5997161Z shell: /usr/bin/bash -e {0}
+2026-09-18T06:15:44.5997422Z env:
+2026-09-18T06:15:44.5997740Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:15:44.5998245Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-09-18T06:15:44.5998673Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-09-18T06:15:44.5998979Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-09-18T06:15:44.5999499Z ##[endgroup]
+2026-09-18T06:15:44.9149625Z Removing android from cordova.platforms array in package.json
+2026-09-18T06:15:45.6300012Z Using cordova-fetch for cordova-android
+2026-09-18T06:15:47.1169384Z Adding android project...
+2026-09-18T06:15:47.1925853Z Creating Cordova project for the Android platform:
+2026-09-18T06:15:47.1926890Z 	Path: platforms/android
+2026-09-18T06:15:47.1927569Z 	Package: com.omar.shield
+2026-09-18T06:15:47.1928052Z 	Name: OmarLock
+2026-09-18T06:15:47.1928535Z 	Activity: MainActivity
+2026-09-18T06:15:47.1929128Z 	Android Target SDK: android-36
+2026-09-18T06:15:47.1929694Z 	Android Compile SDK: 36
+2026-09-18T06:15:47.2243400Z Subproject Path: CordovaLib
+2026-09-18T06:15:47.2244098Z Subproject Path: app
+2026-09-18T06:15:47.2247913Z Android project created with cordova-android@15.1.0
